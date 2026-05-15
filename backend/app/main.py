@@ -4,6 +4,7 @@ from sqlalchemy import text
 
 from .config import settings
 from .database import engine
+from .routers import auth
 
 app = FastAPI(title="Flashcard Learning App API")
 
@@ -14,6 +15,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth.router)
 
 
 @app.get("/api/health")
