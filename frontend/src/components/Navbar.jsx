@@ -17,6 +17,8 @@ export default function Navbar() {
       <nav className="navbar-links">
         {user ? (
           <>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/flashcards">Cards</Link>
             <span className="navbar-user">{user.username}</span>
             <button type="button" className="link-button" onClick={handleLogout}>
               Logout
